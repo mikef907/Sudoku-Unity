@@ -1,22 +1,19 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using System.Linq;
+﻿using System.Linq;
 using TMPro;
+using UnityEngine;
 
 public class EntryInput : MonoBehaviour
 {
     public TMP_InputField inputField;
 
     GBSquare parent;
-    GM _gamemaster;
+    GameService gameService;
 
     private void Start()
     {
+        gameService = GameService.Instance;
+
         parent = GetComponentInParent<GBSquare>();
-        _gamemaster = FindObjectOfType<GM>();
 
         inputField.enabled = parent.Data.Editable;
 

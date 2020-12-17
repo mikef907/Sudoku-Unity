@@ -9,6 +9,8 @@ TagManager:
   - GameBoard
   - GBSquare
   - InputField
+  - NoteBtn
+  - BtnCanvas
   layers:
   - Default
   - TransparentFX

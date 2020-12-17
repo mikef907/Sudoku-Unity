@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 198870769}
   - component: {fileID: 198870768}
   - component: {fileID: 198870771}
+  - component: {fileID: 198870772}
   m_Layer: 5
   m_Name: GameBoard
   m_TagString: GameBoard
@@ -180,7 +181,7 @@ MonoBehaviour:
   m_ChildAlignment: 1
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 0, y: 0}
+  m_CellSize: {x: 100, y: 100}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 9
@@ -241,6 +242,19 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: 0
   m_LayoutPriority: 1
+--- !u!114 &198870772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198870766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33cbda0e38fda5d46ba99ad14e3261b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5247570736736261819, guid: 6e7f685b3e986484dad216b0f93cb222, type: 3}
 --- !u!1001 &708679945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2271,8 +2285,8 @@ GameObject:
   - component: {fileID: 1989811128}
   - component: {fileID: 1989811127}
   m_Layer: 5
-  m_Name: Canvas
-  m_TagString: Untagged
+  m_Name: BtnCanvas
+  m_TagString: BtnCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2535,72 +2549,3 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1001 &3386105170078820096
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3386105170546290994, guid: 39e2c209f70529c41909291dc7948a10,
-        type: 3}
-      propertyPath: m_Name
-      value: GM
-      objectReference: {fileID: 0}
-    - target: {fileID: 3386105170546290996, guid: 39e2c209f70529c41909291dc7948a10,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3386105170546290996, guid: 39e2c209f70529c41909291dc7948a10,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 396.14612
-      objectReference: {fileID: 0}
-    - target: {fileID: 3386105170546290996, guid: 39e2c209f70529c41909291dc7948a10,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 600.9811
-      objectReference: {fileID: 0}
-    - target: {fileID: 3386105170546290996, guid: 39e2c209f70529c41909291dc7948a10,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2633.9375
-      objectReference: {fileID: 0}
-    - target: {fileID: 3386105170546290996, guid: 39e2c209f70529c41909291dc7948a10,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3386105170546290996, guid: 39e2c209f70529c41909291dc7948a10,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3386105170546290996, guid: 39e2c209f70529c41909291dc7948a10,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3386105170546290996, guid: 39e2c209f70529c41909291dc7948a10,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3386105170546290996, guid: 39e2c209f70529c41909291dc7948a10,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3386105170546290996, guid: 39e2c209f70529c41909291dc7948a10,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3386105170546290996, guid: 39e2c209f70529c41909291dc7948a10,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 39e2c209f70529c41909291dc7948a10, type: 3}

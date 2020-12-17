@@ -541,9 +541,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5a8ac669e1f5a4c9260df96b50418f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gamemaster: {fileID: 3386105170546290995, guid: 39e2c209f70529c41909291dc7948a10,
+  _gamemaster: {fileID: 1000962463239345212, guid: 39e2c209f70529c41909291dc7948a10,
     type: 3}
-  square: {fileID: 0}
+  square: {fileID: 5247570736736261819}
   input: {fileID: 1408571352281367552}
   notes: {fileID: 1861932536645804809}
 --- !u!1 &5134777489422333146

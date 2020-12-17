@@ -1,25 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.EventSystems;
-using Sudoku_Lib;
+﻿using Sudoku_Lib;
 using TMPro;
-using UnityEngine.UI;
+using UnityEngine;
 
 public class GBSquare : MonoBehaviour
 {
-    public GM _gamemaster;
+    public GameService gameService;
     public GBSquare square;
     public TMP_InputField input;
     public TMP_Text notes;
 
     public SudokuCellData Data { get; private set; }
-    
+
+    private void Start()
+    {
+        gameService = GameService.Instance;
+    }
 
     public void SetAsCurrent()
     {
-        _gamemaster.SetCurrent(this);
-        Debug.Log(_gamemaster.Current.name);
+        gameService.SetCurrent(this);
+        Debug.Log(gameService.Current.name);
     }
 
     public void initSudokuCellData(SudokuCellData data)
@@ -27,7 +27,7 @@ public class GBSquare : MonoBehaviour
         Data = data;
     }
 
-    private void Update()
+    public void UpdateNotes()
     {
         Data.Data.Sort();
         notes.text = string.Join(" ", Data.Data);

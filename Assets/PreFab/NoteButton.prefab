@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 4255548032941955154}
   m_Layer: 5
   m_Name: NoteButton
-  m_TagString: Untagged
+  m_TagString: NoteBtn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -265,6 +265,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9ef514bb1568c4cbde1bd6ba8f8e41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameMaster: {fileID: 3386105170546290995, guid: 39e2c209f70529c41909291dc7948a10,
+  gameMaster: {fileID: 1000962463239345212, guid: 39e2c209f70529c41909291dc7948a10,
     type: 3}
   btn: {fileID: 3807266733202398848}
