@@ -1,8 +1,9 @@
 ﻿using Sudoku_Lib;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class GBSquare : MonoBehaviour
+public class GBSquare : MonoBehaviour, IPointerClickHandler
 {
     public GameService gameService;
     public GBSquare square;
@@ -22,14 +23,22 @@ public class GBSquare : MonoBehaviour
         Debug.Log(gameService.Current.name);
     }
 
-    public void initSudokuCellData(SudokuCellData data)
+    public void InitSudokuCellData(SudokuCellData data)
     {
         Data = data;
     }
+
 
     public void UpdateNotes()
     {
         Data.Data.Sort();
         notes.text = string.Join(" ", Data.Data);
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        //SetAsCurrent();
+        var entry = GetComponentInChildren<TMP_InputField>();
+        entry.Select();
     }
 }

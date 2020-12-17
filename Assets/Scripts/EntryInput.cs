@@ -8,6 +8,7 @@ public class EntryInput : MonoBehaviour
 
     GBSquare parent;
     GameService gameService;
+    int? curr;
 
     private void Start()
     {
@@ -35,6 +36,7 @@ public class EntryInput : MonoBehaviour
     private void OnValueChanged()
     {
 
+       
     }
 
     private void OnSelect()
@@ -64,5 +66,7 @@ public class EntryInput : MonoBehaviour
     {
         parent.Data.Value = value;
         inputField.text = value?.ToString();
+        gameService.HighlightSameValues(curr);
+        curr = value;
     }
 }

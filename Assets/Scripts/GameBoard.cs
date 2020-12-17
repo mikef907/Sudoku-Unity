@@ -27,6 +27,7 @@ public class GameBoard : MonoBehaviour
                 var square = Instantiate(prefab, transform, false);
                 gameService.InitCellData(square, i, j);
                 square.GetComponent<Image>().color = gameService.GetBGAccent(i, j);
+                gameService.GameSquares.Add(square);
             }
 
         Debug.Log("Gameboard Setup");
