@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using TMPro;
 
 public class GameService
 {
@@ -41,6 +42,7 @@ public class GameService
     {
         sudoku = new Sudoku();
         Seed = new System.Random().Next();
+        GameObject.FindGameObjectWithTag("Seed").GetComponent<TMP_Text>().text = Seed.ToString();
         await sudoku.Init(Seed);
 
         if (noteBtns.Count == 0)
