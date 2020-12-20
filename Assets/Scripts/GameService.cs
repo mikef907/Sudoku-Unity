@@ -112,4 +112,15 @@ public class GameService
         foreach (var btn in noteBtns)
             btn.SetState();
     }
+
+    public void CheckCompleted()
+    {
+        if (sudoku.PuzzleBoard.IsComplete())
+        {
+            if (sudoku.PuzzleBoard.IsSolved())
+            {
+            }
+        }
+        GameObject.FindGameObjectWithTag("Finish").GetComponent<Canvas>().enabled = true;
+    }
 }

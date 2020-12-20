@@ -68,5 +68,7 @@ public class EntryInput : MonoBehaviour
         inputField.text = value?.ToString();
         gameService.HighlightSameValues(curr);
         curr = value;
+
+        gameService.CheckCompleted();
     }
 }

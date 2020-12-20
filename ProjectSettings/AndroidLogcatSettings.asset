@@ -1,13 +1,44 @@
 {
-    "m_SelectedDeviceId": "",
+    "m_SelectedDeviceId": "FA7931A00651",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "FA7931A00651",
+        "name": "com.DefaultCompany.com.unity.template.mobile2D",
+        "processId": 775,
         "exited": false
     },
     "m_SelectedPriority": 0,
-    "m_KnownPackagesForSerialization": [],
+    "m_KnownPackagesForSerialization": [
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 28741,
+            "exited": false
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 29849,
+            "exited": false
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 31095,
+            "exited": false
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 32207,
+            "exited": false
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 775,
+            "exited": false
+        }
+    ],
     "m_Tags": {
         "m_Entries": [
             {
@@ -41,9 +72,20 @@
         ]
     },
     "m_MemoryViewerState": {
-        "MemoryWindowHeight": 0.0,
-        "MemoryWindowWidth": 0.0,
-        "MemoryTypeEnabled": [],
+        "MemoryWindowHeight": 300.0,
+        "MemoryWindowWidth": 170.0,
+        "MemoryTypeEnabled": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
         "MemoryGroup": 1,
         "Behavior": 1
     },
