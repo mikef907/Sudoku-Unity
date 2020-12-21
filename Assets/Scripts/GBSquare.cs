@@ -28,7 +28,6 @@ public class GBSquare : MonoBehaviour, IPointerClickHandler
         Data = data;
     }
 
-
     public void UpdateNotes()
     {
         Data.Data.Sort();

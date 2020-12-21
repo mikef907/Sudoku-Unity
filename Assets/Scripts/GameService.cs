@@ -89,9 +89,7 @@ public class GameService: MonoBehaviour
     }
 
     public void InitCellData(GBSquare square, int row, int col) 
-    {
-        square.InitSudokuCellData(sudoku.PuzzleBoard[row, col]);
-    }
+        => square.InitSudokuCellData(sudoku.PuzzleBoard[row, col]);
 
     public Color GetBGAccent(int row, int col)
     {
@@ -113,10 +111,10 @@ public class GameService: MonoBehaviour
         {
             if (sudoku.PuzzleBoard.IsSolved())
             {
+                ShowOverlay();
             }
         }
 
-        ShowOverlay();
     }
 
     private void ShowOverlay()
