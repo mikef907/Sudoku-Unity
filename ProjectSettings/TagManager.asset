@@ -12,6 +12,8 @@ TagManager:
   - NoteBtn
   - BtnCanvas
   - Seed
+  - Stats
+  - Timer
   layers:
   - Default
   - TransparentFX
