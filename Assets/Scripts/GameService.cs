@@ -36,10 +36,14 @@ public class GameService
     private Sudoku sudoku;
     private List<NoteBtn> noteBtns = new List<NoteBtn>();
 
+    private Finish finishOverlay = Object.FindObjectOfType<Finish>();
+    private Timer timer = Object.FindObjectOfType<Timer>();
+
     private GameService() { }
 
     private async void Init()
     {
+        Current = null;
         sudoku = new Sudoku();
         Seed = new System.Random().Next();
         GameObject.FindGameObjectWithTag("Seed").GetComponent<TMP_Text>().text = Seed.ToString();
@@ -50,6 +54,12 @@ public class GameService
                 noteBtns.Add(_.GetComponent<NoteBtn>());
     }
 
+
+    public void NewPuzzle()
+    {
+        // _instance = new GameService();
+        _instance.Init();
+    }
 
     public void SetCurrent(GBSquare square)
     {
@@ -121,6 +131,17 @@ public class GameService
             {
             }
         }
-        GameObject.FindGameObjectWithTag("Finish").GetComponent<Canvas>().enabled = true;
+
+        ShowOverlay();
+    }
+
+    private void ShowOverlay()
+    {
+        timer.TogglePause(true);
+
+        GameObject.FindGameObjectWithTag("Stats").GetComponent<TMP_Text>().text =
+            $"Your time for puzzle {Seed} is {timer.time.ToString(@"hh\:mm\:ss\:ff")}";
+
+        finishOverlay.GetComponent<Canvas>().enabled = true;
     }
 }

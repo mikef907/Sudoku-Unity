@@ -7,19 +7,27 @@ using System;
 public class Timer : MonoBehaviour
 {
     private TMP_Text timeDisplay;
-    private TimeSpan timer;
+    public TimeSpan time { get; private set; }
     private double tick = 0.02;
+
+    private bool _paused = false;
     // Start is called before the first frame update
     void Start()
     {
         timeDisplay = GetComponent<TMP_Text>();
     }
 
-
-
     private void FixedUpdate()
     {
-        timer = timer.Add(TimeSpan.FromSeconds(tick));
-        timeDisplay.text = timer.ToString(@"hh\:mm\:ss\:ff");
+        if (!_paused)
+        { 
+            time = time.Add(TimeSpan.FromSeconds(tick));
+            timeDisplay.text = time.ToString(@"hh\:mm\:ss\:ff");
+        }
+    }
+
+    public void TogglePause(bool state)
+    {
+        _paused = state;
     }
 }
