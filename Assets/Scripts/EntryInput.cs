@@ -12,7 +12,7 @@ public class EntryInput : MonoBehaviour
 
     private void Start()
     {
-        gameService = GameService.Instance;
+        gameService = FindObjectOfType<GameService>();
 
         parent = GetComponentInParent<GBSquare>();
 

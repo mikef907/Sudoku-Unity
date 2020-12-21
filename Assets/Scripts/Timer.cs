@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System;
 using TMPro;
-using System;
+using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
@@ -11,7 +9,7 @@ public class Timer : MonoBehaviour
     private double tick = 0.02;
 
     private bool _paused = false;
-    // Start is called before the first frame update
+
     void Start()
     {
         timeDisplay = GetComponent<TMP_Text>();

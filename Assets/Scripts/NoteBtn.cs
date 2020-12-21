@@ -4,13 +4,13 @@ using UnityEngine.UI;
 
 public class NoteBtn : MonoBehaviour
 {
-    public GameService gameService;
+    private GameService gameService;
     public Button btn;
     private int value;
 
     void Start()
     {
-        gameService = GameService.Instance;
+        gameService = FindObjectOfType<GameService>();
         value = int.Parse(btn.GetComponentInChildren<TMP_Text>().text);
         btn.onClick.AddListener(delegate { OnClick(); });
     }

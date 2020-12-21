@@ -4,23 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 using TMPro;
+using System.Threading.Tasks;
 
-public class GameService
+public class GameService: MonoBehaviour
 {
-    protected static GameService _instance;
-
-    public static GameService Instance 
-    {
-        get 
-        {
-            if (_instance == null)
-            {
-                _instance = new GameService();
-                _instance.Init();
-            }
-            return _instance;
-        }
-    }
     public List<GBSquare> GameSquares = new List<GBSquare>();
     public GBSquare Current { get; private set; }
     public int Seed { get; private set; }
@@ -36,36 +23,33 @@ public class GameService
     private Sudoku sudoku;
     private List<NoteBtn> noteBtns = new List<NoteBtn>();
 
-    private Finish finishOverlay = Object.FindObjectOfType<Finish>();
-    private Timer timer = Object.FindObjectOfType<Timer>();
+    private Finish finishOverlay;
+    private Timer timer;
 
-    private GameService() { }
+    async void Awake() => await NewPuzzle();
 
-    private async void Init()
+    public async Task NewPuzzle()
     {
         Current = null;
+        finishOverlay = FindObjectOfType<Finish>();
+        timer = FindObjectOfType<Timer>();
+
         sudoku = new Sudoku();
         Seed = new System.Random().Next();
-        GameObject.FindGameObjectWithTag("Seed").GetComponent<TMP_Text>().text = Seed.ToString();
+
         await sudoku.Init(Seed);
+
+        GameObject.FindGameObjectWithTag("Seed").GetComponent<TMP_Text>().text = Seed.ToString();
 
         if (noteBtns.Count == 0)
             foreach (var _ in GameObject.FindGameObjectsWithTag("NoteBtn"))
                 noteBtns.Add(_.GetComponent<NoteBtn>());
     }
 
-
-    public void NewPuzzle()
-    {
-        // _instance = new GameService();
-        _instance.Init();
-    }
-
     public void SetCurrent(GBSquare square)
     {
         if (Current != null)
             ResetHighlight();
-            //Current.GetComponent<Image>().color = GetBGAccent(Current.Data.Row, Current.Data.Col);
         
         Current = square;
         Current.GetComponent<Image>().color = CELL_CURRENT;

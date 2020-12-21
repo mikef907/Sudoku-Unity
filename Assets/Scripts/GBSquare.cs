@@ -5,16 +5,16 @@ using UnityEngine.EventSystems;
 
 public class GBSquare : MonoBehaviour, IPointerClickHandler
 {
-    public GameService gameService;
     public GBSquare square;
     public TMP_InputField input;
     public TMP_Text notes;
+    private GameService gameService;
 
     public SudokuCellData Data { get; private set; }
 
     private void Start()
     {
-        gameService = GameService.Instance;
+        gameService = FindObjectOfType<GameService>();
     }
 
     public void SetAsCurrent()
@@ -37,7 +37,6 @@ public class GBSquare : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        //SetAsCurrent();
         var entry = GetComponentInChildren<TMP_InputField>();
         entry.Select();
     }

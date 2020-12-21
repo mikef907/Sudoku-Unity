@@ -19,7 +19,7 @@ public class GameBoard : MonoBehaviour
 
         gridlayout.cellSize = new Vector2(size, size);
 
-        gameService = GameService.Instance;
+        gameService = FindObjectOfType<GameService>();
 
         for (int i = 0; i < 9; i++)
             for (int j = 0; j < 9; j++)
