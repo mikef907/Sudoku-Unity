@@ -5,7 +5,7 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     private TMP_Text timeDisplay;
-    public TimeSpan time { get; private set; }
+    public TimeSpan time { get; set; }
     private double tick = 0.02;
 
     private bool _paused = false;

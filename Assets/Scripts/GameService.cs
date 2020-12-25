@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using System.Linq;
 using TMPro;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System;
 
 public class GameService: MonoBehaviour
 {
@@ -22,28 +24,83 @@ public class GameService: MonoBehaviour
 
     private Sudoku sudoku;
     private List<NoteBtn> noteBtns = new List<NoteBtn>();
+    private CurrentGame CurrentGame;
 
     private Finish finishOverlay;
     private Timer timer;
 
-    async void Awake() => await NewPuzzle();
-
-    public async Task NewPuzzle()
+    async void Awake()
     {
         Current = null;
         finishOverlay = FindObjectOfType<Finish>();
         timer = FindObjectOfType<Timer>();
 
-        sudoku = new Sudoku();
-        Seed = new System.Random().Next();
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
-        await sudoku.Init(Seed);
+        using (var dataService = new DataService())
+        {
+            dataService.CreateTable<SudokuGame>();
+            dataService.CreateTable<CurrentGame>();
+
+            CurrentGame = dataService.ReadCurrentGame();
+
+            if (CurrentGame != null)
+            {
+                Seed = CurrentGame.Seed;
+                timer.time = CurrentGame.Timer;
+                sudoku = new Sudoku(JsonConvert.DeserializeObject<SudokuCellData[,]>(CurrentGame.State), CurrentGame.Seed);
+            }
+            else
+            { 
+                await NewPuzzle();
+            }
+        }
 
         GameObject.FindGameObjectWithTag("Seed").GetComponent<TMP_Text>().text = Seed.ToString();
 
         if (noteBtns.Count == 0)
             foreach (var _ in GameObject.FindGameObjectsWithTag("NoteBtn"))
                 noteBtns.Add(_.GetComponent<NoteBtn>());
+    }
+
+    private void OnApplicationPause(bool pause)
+    {
+        CurrentGame = new CurrentGame
+        {
+            Seed = Seed,
+            Timer = timer.time,
+            State = JsonConvert.SerializeObject(sudoku.PuzzleBoard)
+        };
+
+        using (var dataService = new DataService())
+        {
+            dataService.ClearCurrent();
+            dataService.Create(CurrentGame);
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        CurrentGame = new CurrentGame
+        {
+            Seed = Seed,
+            Timer = timer.time,
+            State = JsonConvert.SerializeObject(sudoku.PuzzleBoard)
+        };
+
+        using (var dataService = new DataService())
+        {
+            dataService.ClearCurrent();
+            dataService.Create(CurrentGame);
+        }
+    }
+
+    private async Task NewPuzzle()
+    {
+        sudoku = new Sudoku();
+        Seed = new System.Random().Next();
+
+        await sudoku.Init(Seed);
     }
 
     public void SetCurrent(GBSquare square)
