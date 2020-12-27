@@ -16,14 +16,12 @@ public class EntryInput : MonoBehaviour
 
         parent = GetComponentInParent<GBSquare>();
 
-        inputField.enabled = parent.Data.Editable;
+        inputField.readOnly = !parent.Data.Editable;
 
         if (!parent.Data.Editable)
             inputField.GetComponentsInChildren<TMP_Text>().ToList().ForEach(_ => _.fontStyle = FontStyles.Bold);
         
-        
         inputField.text = parent.Data.Value.ToString();
-
     }
 
     private void OnEnable()

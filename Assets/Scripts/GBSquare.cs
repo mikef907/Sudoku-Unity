@@ -15,6 +15,9 @@ public class GBSquare : MonoBehaviour, IPointerClickHandler
     private void Start()
     {
         gameService = FindObjectOfType<GameService>();
+
+        if (Data != null)
+            UpdateNotes();
     }
 
     public void SetAsCurrent()
