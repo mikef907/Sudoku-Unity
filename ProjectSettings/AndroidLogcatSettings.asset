@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "FA7931A00651",
         "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 775,
+        "processId": 17220,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -36,6 +36,12 @@
             "deviceId": "FA7931A00651",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 775,
+            "exited": false
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 17220,
             "exited": false
         }
     ],

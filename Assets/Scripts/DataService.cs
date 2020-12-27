@@ -85,6 +85,26 @@ public class DataService : ConnectionBase
         return results;
     }
 
+    public int GetAttemptCount(int seed)
+    {
+        var command = Connection.CreateCommand();
+        command.CommandText = $"SELECT COUNT(Seed) FROM SudokuGame WHERE Seed = {seed}";
+        IDataReader reader;
+
+        int result = 0;
+
+        using (var con = command.Connection)
+        {
+            con.Open();
+            reader = command.ExecuteReader();
+            reader.Read();
+            result = reader.GetInt32(0);
+            con.Close();
+        }
+
+        return result;
+    }
+
     internal void ClearCurrent()
     {
         IDbCommand command = Connection.CreateCommand();
