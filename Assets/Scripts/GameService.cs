@@ -1,12 +1,12 @@
-﻿using Sudoku_Lib;
+﻿using Newtonsoft.Json;
+using Sudoku_Lib;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using System.Linq;
-using TMPro;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
-using System;
+using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameService: MonoBehaviour
 {
@@ -63,44 +63,22 @@ public class GameService: MonoBehaviour
                 noteBtns.Add(_.GetComponent<NoteBtn>());
     }
 
-    private void OnApplicationPause(bool pause)
+    public void NextPuzzle() 
     {
-        CurrentGame = new CurrentGame
-        {
-            Seed = Seed,
-            Timer = timer.time,
-            State = JsonConvert.SerializeObject(sudoku.PuzzleBoard)
-        };
-
         using (var dataService = new DataService())
         {
+            dataService.Create(new SudokuGame
+            {
+                Seed = Seed,
+                Solved = true,
+                Time = timer.time,
+                Attempt = dataService.GetAttemptCount(Seed) + 1
+            });
+
             dataService.ClearCurrent();
-            dataService.Create(CurrentGame);
         }
-    }
 
-    private void OnApplicationQuit()
-    {
-        CurrentGame = new CurrentGame
-        {
-            Seed = Seed,
-            Timer = timer.time,
-            State = JsonConvert.SerializeObject(sudoku.PuzzleBoard)
-        };
-
-        using (var dataService = new DataService())
-        {
-            dataService.ClearCurrent();
-            dataService.Create(CurrentGame);
-        }
-    }
-
-    private async Task NewPuzzle()
-    {
-        sudoku = new Sudoku();
-        Seed = new System.Random().Next();
-
-        await sudoku.Init(Seed);
+        SceneManager.LoadScene("Game");
     }
 
     public void SetCurrent(GBSquare square)
@@ -114,20 +92,10 @@ public class GameService: MonoBehaviour
         SetNoteButtonsState();
     }
 
-    private void ResetHighlight()
+    public void MainMenu()
     {
-        foreach (var square in GameSquares.Where(s =>
-         (s.Data.Row == Current.Data.Row || s.Data.Col == Current.Data.Col) ||
-         (Current.Data.Value.HasValue && s.Data.Value == Current.Data.Value)))
-            square.GetComponent<Image>().color = GetBGAccent(square.Data.Row, square.Data.Col);
-    }
-
-    private void HighlightAdj()
-    {
-        foreach (var square in GameSquares.Where(s => s != Current &&
-             ((s.Data.Row == Current.Data.Row || s.Data.Col == Current.Data.Col) ||
-             (Current.Data.Value.HasValue && s.Data.Value == Current.Data.Value))))
-            square.GetComponent<Image>().color = CELL_ADJ;
+        SaveCurrentGame();
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void HighlightSameValues(int? oldValue)
@@ -172,6 +140,50 @@ public class GameService: MonoBehaviour
             }
         }
 
+    }
+ 
+    private void OnApplicationPause(bool pause) => SaveCurrentGame();
+
+    private void OnApplicationQuit() => SaveCurrentGame();
+
+    private async Task NewPuzzle()
+    {
+        sudoku = new Sudoku();
+        Seed = new System.Random().Next();
+
+        await sudoku.Init(Seed);
+    }
+
+    private void SaveCurrentGame()
+    {
+        CurrentGame = new CurrentGame
+        {
+            Seed = Seed,
+            Timer = timer.time,
+            State = JsonConvert.SerializeObject(sudoku.PuzzleBoard)
+        };
+
+        using (var dataService = new DataService())
+        {
+            dataService.ClearCurrent();
+            dataService.Create(CurrentGame);
+        }
+    }
+
+    private void ResetHighlight()
+    {
+        foreach (var square in GameSquares.Where(s =>
+         (s.Data.Row == Current.Data.Row || s.Data.Col == Current.Data.Col) ||
+         (Current.Data.Value.HasValue && s.Data.Value == Current.Data.Value)))
+            square.GetComponent<Image>().color = GetBGAccent(square.Data.Row, square.Data.Col);
+    }
+
+    private void HighlightAdj()
+    {
+        foreach (var square in GameSquares.Where(s => s != Current &&
+             ((s.Data.Row == Current.Data.Row || s.Data.Col == Current.Data.Col) ||
+             (Current.Data.Value.HasValue && s.Data.Value == Current.Data.Value))))
+            square.GetComponent<Image>().color = CELL_ADJ;
     }
 
     private void ShowOverlay()

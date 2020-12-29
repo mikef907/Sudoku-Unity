@@ -311,9 +311,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'New Puzzle
-
-'
+  m_text: Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2698,7 +2696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shareBtn: {fileID: 1240407892}
-  gameService: {fileID: 0}
+  gameService: {fileID: 834006478}
 --- !u!1 &1255066578
 GameObject:
   m_ObjectHideFlags: 0
@@ -2977,7 +2975,6 @@ GameObject:
   - component: {fileID: 1430684472}
   - component: {fileID: 1430684471}
   - component: {fileID: 1430684470}
-  - component: {fileID: 1430684473}
   m_Layer: 5
   m_Name: Next Puzzle
   m_TagString: Untagged
@@ -3047,7 +3044,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1430684471}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 834006478}
+        m_MethodName: NextPuzzle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1430684471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3085,19 +3093,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430684468}
   m_CullTransparentMesh: 0
---- !u!114 &1430684473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1430684468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45c6e2b9e1b1774459b723e78f36a3b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextPuzzleBtn: {fileID: 1430684470}
 --- !u!1 &1525060995
 GameObject:
   m_ObjectHideFlags: 0
@@ -3562,9 +3557,8 @@ GameObject:
   - component: {fileID: 1681424667}
   - component: {fileID: 1681424666}
   - component: {fileID: 1681424665}
-  - component: {fileID: 1681424668}
   m_Layer: 8
-  m_Name: New Puzzle
+  m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3587,8 +3581,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 10, y: -1.0040283}
-  m_SizeDelta: {x: 436.7705, y: 86.007965}
+  m_AnchoredPosition: {x: 10, y: -1.0004}
+  m_SizeDelta: {x: 257.03027, y: 86.00797}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1681424665
 MonoBehaviour:
@@ -3632,7 +3626,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1681424666}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 834006478}
+        m_MethodName: MainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1681424666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3670,19 +3675,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1681424663}
   m_CullTransparentMesh: 0
---- !u!114 &1681424668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1681424663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45c6e2b9e1b1774459b723e78f36a3b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextPuzzleBtn: {fileID: 1681424665}
 --- !u!1001 &1769358927
 PrefabInstance:
   m_ObjectHideFlags: 0
