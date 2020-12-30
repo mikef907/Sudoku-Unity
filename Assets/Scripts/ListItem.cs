@@ -2,13 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 
-public class ListItem : MonoBehaviour
+public class ListItem : MonoBehaviour, IPointerClickHandler
 {
     public TMP_Text Seed;
     public TMP_Text Time;
     public TMP_Text Attempt;
     public TMP_Text Completed;
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        var controller = FindObjectOfType<PuzzleListController>();
+        controller.SetSelected(this);
+    }
 
     public void SetContent(SudokuGame game)
     {
@@ -17,4 +24,6 @@ public class ListItem : MonoBehaviour
         Attempt.text = game.Attempt.ToString();
         Completed.text = game.Solved ? "Yes" : "No";
     }
+
+
 }

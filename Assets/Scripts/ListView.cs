@@ -15,6 +15,7 @@ public class ListView : MonoBehaviour
             { 
                 var item = Instantiate(prefab, transform, false);
                 item.SetContent(game);
+                
             }
         }
     }
