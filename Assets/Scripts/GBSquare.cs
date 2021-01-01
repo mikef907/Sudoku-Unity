@@ -34,7 +34,7 @@ public class GBSquare : MonoBehaviour, IPointerClickHandler
     public void UpdateNotes()
     {
         Data.Data.Sort();
-        notes.text = string.Join(" ", Data.Data);
+        notes.text = string.Join("", Data.Data);
     }
 
     public void OnPointerClick(PointerEventData eventData)

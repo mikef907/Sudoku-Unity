@@ -5,7 +5,7 @@ using UnityEngine;
 public class EntryInput : MonoBehaviour
 {
     public TMP_InputField inputField;
-
+    private Color32 UNEDITABLE = new Color32(214, 48, 49, 255);
     GBSquare parent;
     GameService gameService;
     int? curr;
@@ -19,7 +19,7 @@ public class EntryInput : MonoBehaviour
         inputField.readOnly = !parent.Data.Editable;
 
         if (!parent.Data.Editable)
-            inputField.GetComponentsInChildren<TMP_Text>().ToList().ForEach(_ => _.fontStyle = FontStyles.Bold);
+            inputField.GetComponentsInChildren<TMP_Text>().ToList().ForEach(_ => _.color = UNEDITABLE);
         
         inputField.text = parent.Data.Value.ToString();
     }

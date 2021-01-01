@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "FA7931A00651",
     "m_SelectedPackage": {
-        "deviceId": "FA7931A00651",
-        "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 17220,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,37 +11,37 @@
         {
             "deviceId": "FA7931A00651",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 28741,
-            "exited": false
-        },
-        {
-            "deviceId": "FA7931A00651",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 29849,
-            "exited": false
-        },
-        {
-            "deviceId": "FA7931A00651",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 31095,
-            "exited": false
-        },
-        {
-            "deviceId": "FA7931A00651",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 32207,
-            "exited": false
-        },
-        {
-            "deviceId": "FA7931A00651",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 775,
-            "exited": false
-        },
-        {
-            "deviceId": "FA7931A00651",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 17220,
+            "exited": true
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 13599,
+            "exited": true
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 15917,
+            "exited": true
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 16464,
+            "exited": true
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 19616,
+            "exited": true
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.unity3d.mobileremote",
+            "processId": 13213,
             "exited": false
         }
     ],

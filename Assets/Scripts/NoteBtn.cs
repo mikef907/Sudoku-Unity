@@ -8,7 +8,7 @@ public class NoteBtn : MonoBehaviour
     public Button btn;
     private int value;
 
-    void Start()
+    void Awake()
     {
         gameService = FindObjectOfType<GameService>();
         value = int.Parse(btn.GetComponentInChildren<TMP_Text>().text);

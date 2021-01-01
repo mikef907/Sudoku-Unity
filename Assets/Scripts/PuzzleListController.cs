@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class PuzzleListController : MonoBehaviour
 {
     private ListItem selected;
-    private readonly Color32 BASE = new Color32(45, 52, 54, 255);
-    private readonly Color32 SELECTED = new Color32(99, 110, 114, 255);
+    private readonly Color32 BASE = new Color32(45, 52, 54, 0);
+    private readonly Color32 SELECTED = new Color32(99, 110, 114, 100);
 
     public void MainMenuClick()
     {
