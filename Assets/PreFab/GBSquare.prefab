@@ -183,7 +183,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0}
-  m_Text: 8
+  m_Text: 
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "8\u200B"
+  m_text: "\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ff54ab96e34c3a34ea687fdae512eda9, type: 2}
   m_sharedMaterial: {fileID: 3467575525704880007, guid: ff54ab96e34c3a34ea687fdae512eda9,
@@ -472,7 +472,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 798aa1bffaaed5c4ea6c2a7d4b6a0f10, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 89d73c81f98df484f897f6751b5e45f1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

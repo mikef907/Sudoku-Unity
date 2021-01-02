@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "FA7931A00651",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "FA7931A00651",
+        "name": "com.DefaultCompany.com.unity.template.mobile2D",
+        "processId": 26250,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -42,6 +42,18 @@
             "deviceId": "FA7931A00651",
             "name": "com.unity3d.mobileremote",
             "processId": 13213,
+            "exited": false
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 25702,
+            "exited": true
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 26250,
             "exited": false
         }
     ],

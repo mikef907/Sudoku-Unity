@@ -141,7 +141,23 @@ public class GameService: MonoBehaviour
         }
 
     }
- 
+
+    public void ShareInGame()
+    {
+        new NativeShare()
+        .SetText($"Check out this Paper Sudoku puzzle! https://playsudoku.app/seed/{Seed}")
+        .SetCallback((result, shareTarget) => Debug.Log("Share result: " + result + ", selected app: " + shareTarget))
+        .Share();
+    }
+
+    public void ShareFinished()
+    {
+        new NativeShare()
+        .SetText($"I solved this Paper Sudoku puzzle in {timer.time}! Can you beat that? https://playsudoku.app/seed/{Seed}")
+        .SetCallback((result, shareTarget) => Debug.Log("Share result: " + result + ", selected app: " + shareTarget))
+        .Share();
+    }
+
     private void OnApplicationPause(bool pause) => SaveCurrentGame();
 
     private void OnApplicationQuit() => SaveCurrentGame();
