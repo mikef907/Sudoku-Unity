@@ -39,9 +39,6 @@ public class GameService: MonoBehaviour
 
         using (var dataService = new DataService())
         {
-            dataService.CreateTable<SudokuGame>();
-            dataService.CreateTable<CurrentGame>();
-
             CurrentGame = dataService.ReadCurrentGame();
 
             if (CurrentGame != null)

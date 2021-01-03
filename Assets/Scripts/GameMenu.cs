@@ -5,6 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class GameMenu : MonoBehaviour
 {
+    public void Awake()
+    {
+        using (var dataService = new DataService())
+        {
+            dataService.CreateTable<SudokuGame>();
+            dataService.CreateTable<CurrentGame>();
+        }
+    }
+
     public void NewGame()
     {
         using (var dataService = new DataService())
