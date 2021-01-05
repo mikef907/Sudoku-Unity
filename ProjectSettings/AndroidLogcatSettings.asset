@@ -2,47 +2,17 @@
     "m_SelectedDeviceId": "FA7931A00651",
     "m_SelectedPackage": {
         "deviceId": "FA7931A00651",
-        "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 26250,
-        "exited": false
+        "name": "com.swollom.sudoku",
+        "processId": 29249,
+        "exited": true
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
         {
             "deviceId": "FA7931A00651",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 17220,
-            "exited": true
-        },
-        {
-            "deviceId": "FA7931A00651",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 13599,
-            "exited": true
-        },
-        {
-            "deviceId": "FA7931A00651",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 15917,
-            "exited": true
-        },
-        {
-            "deviceId": "FA7931A00651",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 16464,
-            "exited": true
-        },
-        {
-            "deviceId": "FA7931A00651",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 19616,
-            "exited": true
-        },
-        {
-            "deviceId": "FA7931A00651",
             "name": "com.unity3d.mobileremote",
             "processId": 13213,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "FA7931A00651",
@@ -54,7 +24,49 @@
             "deviceId": "FA7931A00651",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 26250,
+            "exited": true
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.unity3d.mobileremote",
+            "processId": 13327,
+            "exited": true
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.unity3d.mobileremote",
+            "processId": 18456,
+            "exited": true
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.unity3d.mobileremote",
+            "processId": 25388,
             "exited": false
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.swollom.sudoku",
+            "processId": 27644,
+            "exited": true
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.swollom.sudoku",
+            "processId": 28047,
+            "exited": true
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.swollom.sudoku",
+            "processId": 28715,
+            "exited": true
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.swollom.sudoku",
+            "processId": 29249,
+            "exited": true
         }
     ],
     "m_Tags": {
