@@ -29,7 +29,5 @@ public class GameBoard : MonoBehaviour
                 square.GetComponent<Image>().color = gameService.GetBGAccent(i, j);
                 gameService.GameSquares.Add(square);
             }
-
-        Debug.Log("Gameboard Setup");
     }
 }

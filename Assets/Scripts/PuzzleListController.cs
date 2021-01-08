@@ -19,7 +19,6 @@ public class PuzzleListController : MonoBehaviour
         {
             new NativeShare()
                 .SetText($"Check out this Sudoku puzzle! https://playsudoku.app/seed/{selected.Seed.text}")
-                .SetCallback((result, shareTarget) => Debug.Log("Share result: " + result + ", selected app: " + shareTarget))
                 .Share();
         }
     }

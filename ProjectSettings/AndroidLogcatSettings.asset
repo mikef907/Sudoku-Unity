@@ -3,46 +3,16 @@
     "m_SelectedPackage": {
         "deviceId": "FA7931A00651",
         "name": "com.swollom.sudoku",
-        "processId": 29249,
-        "exited": true
+        "processId": 30482,
+        "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
         {
             "deviceId": "FA7931A00651",
             "name": "com.unity3d.mobileremote",
-            "processId": 13213,
-            "exited": true
-        },
-        {
-            "deviceId": "FA7931A00651",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 25702,
-            "exited": true
-        },
-        {
-            "deviceId": "FA7931A00651",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 26250,
-            "exited": true
-        },
-        {
-            "deviceId": "FA7931A00651",
-            "name": "com.unity3d.mobileremote",
-            "processId": 13327,
-            "exited": true
-        },
-        {
-            "deviceId": "FA7931A00651",
-            "name": "com.unity3d.mobileremote",
-            "processId": 18456,
-            "exited": true
-        },
-        {
-            "deviceId": "FA7931A00651",
-            "name": "com.unity3d.mobileremote",
             "processId": 25388,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "FA7931A00651",
@@ -67,6 +37,78 @@
             "name": "com.swollom.sudoku",
             "processId": 29249,
             "exited": true
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.google.android.keep",
+            "processId": 31399,
+            "exited": false
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.swollom.sudoku",
+            "processId": 25568,
+            "exited": false
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.swollom.sudoku",
+            "processId": 11603,
+            "exited": false
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.swollom.sudoku",
+            "processId": 12160,
+            "exited": true
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.swollom.sudoku",
+            "processId": 12952,
+            "exited": false
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.swollom.sudoku",
+            "processId": 13759,
+            "exited": false
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.swollom.sudoku",
+            "processId": 17331,
+            "exited": false
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.swollom.sudoku",
+            "processId": 19805,
+            "exited": false
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.swollom.sudoku",
+            "processId": 21429,
+            "exited": false
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.swollom.sudoku",
+            "processId": 23301,
+            "exited": false
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.swollom.sudoku",
+            "processId": 25512,
+            "exited": true
+        },
+        {
+            "deviceId": "FA7931A00651",
+            "name": "com.swollom.sudoku",
+            "processId": 30482,
+            "exited": false
         }
     ],
     "m_Tags": {

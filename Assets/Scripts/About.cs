@@ -7,4 +7,9 @@ public class About : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void LinkClick()
+    {
+        Application.OpenURL("https://beaubastic.com");
+    }
 }

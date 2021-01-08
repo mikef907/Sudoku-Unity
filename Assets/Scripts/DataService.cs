@@ -65,8 +65,6 @@ public class DataService : ConnectionBase
             reader = command.ExecuteReader();
             while (reader.Read())
             {
-                Debug.Log($"{reader.GetValue(0)} {reader.GetValue(1)} {reader.GetValue(2)} {reader.GetValue(3)} {reader.GetValue(4)} ");
-
                 results.Add(new SudokuGame
                 {
                     Id = reader.GetInt32(0),
@@ -122,8 +120,6 @@ public class DataService : ConnectionBase
             reader = command.ExecuteReader();
             while (reader.Read())
             {
-                Debug.Log($"{reader.GetValue(0)} {reader.GetValue(1)} {reader.GetValue(2)} {reader.GetValue(3)}");
-
                 result = new CurrentGame
                 {
                     Id = reader.GetInt32(0),

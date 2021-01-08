@@ -29,7 +29,7 @@ public class GameService: MonoBehaviour
     private Finish finishOverlay;
     private Timer timer;
 
-    async void Awake()
+    void Awake()
     {
         Current = null;
         finishOverlay = FindObjectOfType<Finish>();
@@ -37,19 +37,39 @@ public class GameService: MonoBehaviour
 
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
+        var linkMngr = ProcessDeepLinkMngr.Instance;
+
         using (var dataService = new DataService())
         {
             CurrentGame = dataService.ReadCurrentGame();
+            
+            if (linkMngr != null && linkMngr.seed > 0)
+            {
+                if (CurrentGame != null)
+                {
+                    dataService.Create(new SudokuGame
+                    {
+                        Seed = CurrentGame.Seed,
+                        Solved = false,
+                        Time = CurrentGame.Timer,
+                        Attempt = dataService.GetAttemptCount(CurrentGame.Seed) + 1
+                    });
 
-            if (CurrentGame != null)
+                    dataService.ClearCurrent();
+                }
+
+                NewPuzzle(linkMngr.seed);
+                linkMngr.seed = 0;
+            }
+            else if (CurrentGame != null)
             {
                 Seed = CurrentGame.Seed;
                 timer.time = CurrentGame.Timer;
                 sudoku = new Sudoku(JsonConvert.DeserializeObject<SudokuCellData[,]>(CurrentGame.State), CurrentGame.Seed);
             }
             else
-            { 
-                await NewPuzzle();
+            {
+                NewPuzzle();
             }
         }
 
@@ -143,7 +163,6 @@ public class GameService: MonoBehaviour
     {
         new NativeShare()
         .SetText($"Check out this Paper Sudoku puzzle! https://playsudoku.app/seed/{Seed}")
-        .SetCallback((result, shareTarget) => Debug.Log("Share result: " + result + ", selected app: " + shareTarget))
         .Share();
     }
 
@@ -151,7 +170,6 @@ public class GameService: MonoBehaviour
     {
         new NativeShare()
         .SetText($"I solved this Paper Sudoku puzzle in {timer.time}! Can you beat that? https://playsudoku.app/seed/{Seed}")
-        .SetCallback((result, shareTarget) => Debug.Log("Share result: " + result + ", selected app: " + shareTarget))
         .Share();
     }
 
@@ -159,12 +177,13 @@ public class GameService: MonoBehaviour
 
     private void OnApplicationQuit() => SaveCurrentGame();
 
-    private async Task NewPuzzle()
+    private void NewPuzzle(int? seed = null)
     {
         sudoku = new Sudoku();
-        Seed = new System.Random().Next();
+        Seed = seed ?? new System.Random().Next();
 
-        await sudoku.Init(Seed);
+        sudoku.Init(Seed).Wait();
+
     }
 
     private void SaveCurrentGame()
